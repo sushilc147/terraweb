@@ -18,10 +18,6 @@ RUN apt-get update && apt-get install -y \
   && rm -rf /var/lib/apt/lists/*
 RUN wget https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip && \
     unzip terraform_${TERRAFORM_VERSION}_linux_amd64.zip -d /usr/bin && \  
-#RUN wget --quiet https://releases.hashicorp.com/terraform/0.11.3/terraform_0.11.3_linux_amd64.zip \
-  #&& unzip terraform_0.11.3_linux_amd64.zip \
-  #&& mv terraform /usr/bin \
-  && rm *_linux_amd64.zip
 
 #COPY ./abc /$TAG/
 RUN echo $TAG
