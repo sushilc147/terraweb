@@ -7,7 +7,17 @@
 # REQUIRE A SPECIFIC TERRAFORM VERSION OR HIGHER
 # This module has been updated with 0.12 syntax, which means it is no longer compatible with any versions below 0.12.
 # ----------------------------------------------------------------------------------------------------------------------
+variable "accessKey" {
+  type        = "string"
+  description = "AWS access key id"
+  default = "missing"
+}
 
+variable "secretKey" {
+  type        = "string"
+  description = "AWS access secret key"
+  default = "missing"
+}
 terraform {
   required_version = ">= 0.12"
 }
@@ -17,6 +27,8 @@ terraform {
 # ------------------------------------------------------------------------------
 
 provider "aws" {
+  access_key = "${var.accessKey}"
+  secret_key = "${var.secretKey}"
   region = "us-east-2"
 }
 
