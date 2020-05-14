@@ -3,6 +3,8 @@ FROM ubuntu:16.04
 ARG TAG=subbu
 ENV env_var_name=$TAG
 
+ENV TERRAFORM_VERSION=0.12.21
+
 ARG AWS_ACCESS_KEY_ID=test
 ENV access_key=$AWS_ACCESS_KEY_ID
 
@@ -14,11 +16,12 @@ RUN apt-get update && apt-get install -y \
     unzip \
 	ntp \
   && rm -rf /var/lib/apt/lists/*
-  
-RUN wget --quiet https://releases.hashicorp.com/terraform/0.11.3/terraform_0.11.3_linux_amd64.zip \
-  && unzip terraform_0.11.3_linux_amd64.zip \
-  && mv terraform /usr/bin \
-  && rm terraform_0.11.3_linux_amd64.zip
+RUN wget https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip && \
+    unzip terraform_${TERRAFORM_VERSION}_linux_amd64.zip -d /usr/bin && \  
+#RUN wget --quiet https://releases.hashicorp.com/terraform/0.11.3/terraform_0.11.3_linux_amd64.zip \
+  #&& unzip terraform_0.11.3_linux_amd64.zip \
+  #&& mv terraform /usr/bin \
+  && rm *_linux_amd64.zip
 
 #COPY ./abc /$TAG/
 RUN echo $TAG
