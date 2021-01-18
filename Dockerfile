@@ -20,13 +20,13 @@ RUN apt-get update && apt-get install -y \
     #unzip terraform_${TERRAFORM_VERSION}_linux_amd64.zip -d /usr/bin && \ 
 RUN wget https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip && \
     unzip terraform_${TERRAFORM_VERSION}_linux_amd64.zip -d /usr/bin
-COPY ./abc /$TAG/
-RUN echo $TAG
+#COPY ./abc /$TAG/
+#RUN echo $TAG
 
-COPY ./abc /$env_var_name/
+#COPY ./abc /$env_var_name/
 RUN echo $env_var_name
 
-COPY ./abc /$TAG/
+#COPY ./abc /$TAG/
 COPY ./tf_aws.tf /$TAG/
 WORKDIR /tmp/
 RUN echo "hello"
