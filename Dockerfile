@@ -27,7 +27,7 @@ RUN wget https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform
 RUN echo $env_var_name
 
 #COPY ./abc /$TAG/
-COPY ./tf_aws.tf /$TAG/
+#COPY ./tf_aws.tf /$TAG/
 WORKDIR /tmp/
 RUN echo "hello"
 RUN echo `pwd`
