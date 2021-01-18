@@ -8,18 +8,18 @@
 # This module has been updated with 0.12 syntax, which means it is no longer compatible with any versions below 0.12.
 # ----------------------------------------------------------------------------------------------------------------------
 variable "accessKey" {
-  type        = "string"
-  description = "AWS access key id"
-  default = "missing"
+  type        = string
+  description = AWS access key id
+  default = missing
 }
 
 variable "secretKey" {
-  type        = "string"
-  description = "AWS access secret key"
-  default = "missing"
+  type        = string
+  description = AWS access secret key
+  default = missing
 }
 terraform {
-  required_version = ">= 0.12"
+  required_version = >= 0.13
 }
 
 # ------------------------------------------------------------------------------
@@ -29,7 +29,7 @@ terraform {
 provider "aws" {
   access_key = var.accessKey
   secret_key = var.secretKey
-  region = "us-east-2"
+  region = us-east-2
 }
 
 # ---------------------------------------------------------------------------------------------------------------------
@@ -38,9 +38,9 @@ provider "aws" {
 
 resource "aws_instance" "example" {
   # Ubuntu Server 18.04 LTS (HVM), SSD Volume Type in us-east-2
-  ami                    = "ami-0c55b159cbfafe1f0"
-  instance_type          = "t2.micro"
-  vpc_security_group_ids = "aws_security_group.instance.id"
+  ami                    = ami-0c55b159cbfafe1f0
+  instance_type          = t2.micro
+  vpc_security_group_ids = aws_security_group.instance.id
 
   user_data = <<-EOF
               #!/bin/bash
