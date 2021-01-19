@@ -29,7 +29,7 @@ terraform {
 provider "aws" {
   access_key = "var.accessKey"
   secret_key = "var.secretKey"
-  region = us-east-2
+  region = "us-east-2"
 }
 
 # ---------------------------------------------------------------------------------------------------------------------
@@ -38,9 +38,9 @@ provider "aws" {
 
 resource "aws_instance" "example" {
   # Ubuntu Server 18.04 LTS (HVM), SSD Volume Type in us-east-2
-  ami                    = ami-0c55b159cbfafe1f0
-  instance_type          = t2.micro
-  vpc_security_group_ids = aws_security_group.instance.id
+  ami                    = "ami-0c55b159cbfafe1f0"
+  instance_type          = "t2.micro"
+  vpc_security_group_ids = "aws_security_group.instance.id"
 
   user_data = <<-EOF
               #!/bin/bash
@@ -49,7 +49,7 @@ resource "aws_instance" "example" {
               EOF
 
   tags = {
-    Name = terraform-example
+    Name = "terraform-example"
   }
 }
 
