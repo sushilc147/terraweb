@@ -9,13 +9,13 @@
 # ----------------------------------------------------------------------------------------------------------------------
 variable "accessKey" {
   type        = string
-  description = AWS access key id
+  description = "AWS access key id"
   default = missing
 }
 
 variable "secretKey" {
   type        = string
-  description = AWS access secret key
+  description = "AWS access secret key"
   default = missing
 }
 terraform {
@@ -27,8 +27,8 @@ terraform {
 # ------------------------------------------------------------------------------
 
 provider "aws" {
-  access_key = var.accessKey
-  secret_key = var.secretKey
+  access_key = "var.accessKey"
+  secret_key = "var.secretKey"
   region = us-east-2
 }
 
