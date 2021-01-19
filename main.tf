@@ -9,13 +9,13 @@
 # ----------------------------------------------------------------------------------------------------------------------
 variable "accessKey" {
   type        = string
-  description = "AWS access key id"
+  description = "AWS_ACCESS_KEY_ID"
   default = "missing"
 }
 
 variable "secretKey" {
   type        = string
-  description = "AWS access secret key"
+  description = "AWS_SECRET_ACCESS_KEY"
   default = "missing"
 }
 terraform {
