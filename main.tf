@@ -10,16 +10,16 @@
 variable "accessKey" {
   type        = string
   description = "AWS access key id"
-  default = missing
+  default = "missing"
 }
 
 variable "secretKey" {
   type        = string
   description = "AWS access secret key"
-  default = missing
+  default = "missing"
 }
 terraform {
-  required_version = >= 0.13
+  required_version = >= "0.13"
 }
 
 # ------------------------------------------------------------------------------
