@@ -19,7 +19,7 @@ variable "secretKey" {
   default = "missing"
 }
 terraform {
-  required_version = >= "0.13"
+  required_version = >= 0.13
 }
 
 # ------------------------------------------------------------------------------
@@ -49,7 +49,7 @@ resource "aws_instance" "example" {
               EOF
 
   tags = {
-    Name = "terraform-example"
+    Name = terraform-example
   }
 }
 
