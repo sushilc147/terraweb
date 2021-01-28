@@ -27,8 +27,11 @@ terraform {
 # ------------------------------------------------------------------------------
 
 provider "aws" {
-  access_key = "var.accessKey"
-  secret_key = "var.secretKey"
+  role_arn     = "arn:aws:iam::309314124685:user/terraformtest"
+    session_name = "SESSION_NAME"
+    external_id  = "terraformtest"
+  #access_key = "var.accessKey"
+  #secret_key = "var.secretKey"
   region = "us-east-1"
 }
 
