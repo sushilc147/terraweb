@@ -12,7 +12,9 @@ pipeline {
 				$class: 'AmazonWebServicesCredentialsBinding',
 				credentialsId: 'sushilAwsCredentials',
 				accessKeyVariable: 'AWS_ACCESS_KEY_ID',
-				secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
+				secretKeyVariable: 'AWS_SECRET_ACCESS_KEY',
+				SessionToken: 'temporary-session-token',
+        			Expiration: 'expiration-date-time'
 			]]) {
 					sh 'echo `date`'
 					//sh 'terraform init -reconfigure'
