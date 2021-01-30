@@ -12,9 +12,7 @@ pipeline {
 				$class: 'AmazonWebServicesCredentialsBinding',
 				credentialsId: 'sushilAwsCredentials',
 				accessKeyVariable: 'AWS_ACCESS_KEY_ID',
-				secretKeyVariable: 'AWS_SECRET_ACCESS_KEY',
-				SessionToken: 'temporary-session-token',
-        			Expiration: 'expiration-date-time'
+				secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
 			]]) {
 					sh 'echo `date`'
 					//sh 'terraform init -reconfigure'
@@ -22,8 +20,8 @@ pipeline {
 					sh 'terraform plan -var accessKey=${AWS_ACCESS_KEY_ID} -var secretKey=${AWS_SECRET_ACCESS_KEY}'
 					sh 'echo `date`'
 					sh '`pwd`'
-				  //sh 'terraform apply -var accessKey=${AWS_ACCESS_KEY_ID} -var secretKey=${AWS_SECRET_ACCESS_KEY} -auto-approve'
-				  //sh 'terraform destroy -var accessKey=${AWS_ACCESS_KEY_ID} -var secretKey=${AWS_SECRET_ACCESS_KEY} -force'
+				  sh 'terraform apply -var accessKey=${AWS_ACCESS_KEY_ID} -var secretKey=${AWS_SECRET_ACCESS_KEY} -auto-approve'
+				  sh 'terraform destroy -var accessKey=${AWS_ACCESS_KEY_ID} -var secretKey=${AWS_SECRET_ACCESS_KEY} -force'
 				}
 			
 		}
