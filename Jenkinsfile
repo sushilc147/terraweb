@@ -10,7 +10,7 @@ pipeline {
 	     steps {
 			withCredentials([[
 				$class: 'AmazonWebServicesCredentialsBinding',
-				credentialsId: 'sushilAwsCredentials',
+				credentialsId: 'tori',
 				accessKeyVariable: 'AWS_ACCESS_KEY_ID',
 				secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
 			]]) {
