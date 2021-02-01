@@ -19,7 +19,7 @@ variable "secretKey" {
   default = "missing"
 }
 terraform {
-  required_version ="~>0.14.5"
+  required_version ="~>3.25.0"
 }
 
 # ------------------------------------------------------------------------------
