@@ -3,7 +3,7 @@ FROM ubuntu:16.04
 ARG TAG=swan
 ENV env_var_name=$TAG
 #ENV TERRAFORM_VERSION=0.13.6 
-ENV TERRAFORM_VERSION=0.14.5
+ENV TERRAFORM_VERSION=3.25.0
 #ENV TERRAFORM_VERSION=0.15.0-alpha20210107
 
 ARG AWS_ACCESS_KEY_ID=test
@@ -17,12 +17,12 @@ RUN apt-get update && apt-get install -y \
     unzip \
 	ntp \
   && rm -rf /var/lib/apt/lists/*
-#RUN wget https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_386.zip && \
-    #unzip terraform_${TERRAFORM_VERSION}_linux_amd64.zip -d /usr/bin && \ 
+RUN wget https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_386.zip && \
+    unzip terraform_${TERRAFORM_VERSION}_linux_amd64.zip -d /usr/bin && \ 
 #RUN wget https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip && \
 #    unzip terraform_${TERRAFORM_VERSION}_linux_amd64.zip -d /usr/bin
-RUN wget https://releases.hashicorp.com/terraform/0.14.5/terraform_0.14.5_linux_amd64.zip && \
-	unzip terraform_0.14.5_linux_amd64.zip -d /usr/bin
+#RUN wget https://releases.hashicorp.com/terraform/0.14.5/terraform_0.14.5_linux_amd64.zip && \
+	#unzip terraform_0.14.5_linux_amd64.zip -d /usr/bin
 #COPY ./abc /$TAG/
 #RUN echo $TAG
 
