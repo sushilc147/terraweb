@@ -19,7 +19,7 @@ variable "secretKey" {
   default = "missing"
 }
 terraform {
-  required_version ="~>3.25.0"
+  required_version ="~>0.13.6"
 }
 
 # ------------------------------------------------------------------------------
@@ -29,10 +29,6 @@ terraform {
 provider "aws" {
   access_key = "var.accessKey"
   secret_key = "var.secretKey"
-  #role_arn     = "arn:aws:iam::309314124685:user/terraformtest"
-  #external_id  = "terraformtest"
-  #access_key = "var.accessKey"
-  #secret_key = "var.secretKey"
   region = "us-east-1"
 }
 
