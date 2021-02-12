@@ -32,6 +32,9 @@ provider "aws" {
   skip_credentials_validation = true
   region = "us-east-1"
 }
+provider "tls" {
+  version = "~> 2.1"
+  }
 
 # ---------------------------------------------------------------------------------------------------------------------
 # DEPLOY A SINGLE EC2 INSTANCE
