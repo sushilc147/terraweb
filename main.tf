@@ -29,6 +29,7 @@ terraform {
 provider "aws" {
   access_key = "var.accessKey"
   secret_key = "var.secretKey"
+  skip_credentials_validation = true
   region = "us-east-1"
 }
 
