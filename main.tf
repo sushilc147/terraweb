@@ -31,7 +31,7 @@ provider "aws" {
   secret_key = "var.secretKey"
   ignore_tags {
   keys = ["sushilAwsCredentials"]
-  skip_credentials_validation = true
+  #skip_credentials_validation = true
   #region = "us-east-1"
 }
   }
