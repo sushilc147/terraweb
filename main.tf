@@ -32,7 +32,7 @@ provider "aws" {
   ignore_tags {
   keys = ["sushilAwsCredentials"]
   skip_credentials_validation = true
-  region = "us-east-1"
+  #region = "us-east-1"
 }
   }
 provider "tls" {
