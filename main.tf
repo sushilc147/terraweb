@@ -29,9 +29,12 @@ terraform {
 provider "aws" {
   access_key = "var.accessKey"
   secret_key = "var.secretKey"
+  ignore_tags {
+  keys = ["sushilAwsCredentials"]
   skip_credentials_validation = true
   region = "us-east-1"
 }
+  }
 provider "tls" {
   version = "~> 2.1"
   }
