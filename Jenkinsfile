@@ -1,6 +1,6 @@
 pipeline { 	
   agent {
-    dockerfile {
+    Dockerfile {
 		 filename 'Dockerfile'
 		 reuseNode false
 	 }
